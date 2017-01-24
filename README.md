@@ -392,7 +392,7 @@ We deﬁned all of the required matrices for Kalman ﬁlter. Now we can use the 
 
 In order to observe the behaviour of Kalman ﬁlter under diﬀerent circumstances, we considered three diﬀerent cases to examine the Kalman ﬁlter in object tracking. In the following subsections, we examine each of these cases. <a href="" id="x1-31r1"></a>
 
-###A. Scenario 1: Prediction
+####A. Scenario 1: Prediction
 
 The ﬁrst scenario is the case that we are sensing the position of the object every 3 frames and we want to have a good prediction of the position of moving object based on these samples. Fig. 6, illustrates the result in four diﬀerent frames. The yellow circle is our main tracker(which is used as the input to the Kalman ﬁlter every 3 frames) and the black circle is the prediction of Kalman ﬁlter. It can be observed that the Kalman ﬁlter is tracking the moving object with a very good accuracy.
 
@@ -404,7 +404,7 @@ The ﬁrst scenario is the case that we are sensing the position of the object e
 
 <a href="" id="x1-33r2"></a>
 
-###B. Scenario 2: Prediction In The Presence of Noise
+####B. Scenario 2: Prediction In The Presence of Noise
 
 In this scenario, we add a large noise to the input of the Kalman ﬁlter. It turns out that the Kalman ﬁlter is more robust to the noise than the original tracker. So, if we have our measurements aren corrupted by noise, one can use the Kalman ﬁlter to obtain a better estimation than each of the sensors (<span class="ptmri7t-">data fusion</span>) because this algorithm is an adaptive ﬁlter and is more robust to the noise than each of the sensors. Fig. 7, illustrates this scenario. It can be seen that, the yellow circle is jumping around and is far from the object. However, the Kalman ﬁlter has a better estimation of the position. Please note that, a low gain will smooth out the noise but also lowers the speed of Kalman ﬁlter (it will detect the changes more slowly).
 
