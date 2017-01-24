@@ -22,13 +22,13 @@ A video is composed of a series of frames each which can be considered as a 2D s
 <tbody>
 <tr class="odd">
 <td><a href="" id="x1-5r1"></a>
-<img src="document0x.png" alt="y = x + v " class="math-display" /></td>
+<img src="./images/document0x.png" alt="y = x + v " class="math-display" /></td>
 <td>(1)</td>
 </tr>
 </tbody>
 </table>
 
-Where <span class="cmmi-10">y </span>is our noisy measurement of <span class="cmmi-10">x </span>(background signal), and <span class="cmmi-10">v </span>denotes the disturbance which in fact is our moving object disturbing that background signal <span class="cmmi-10">x</span>. As it was mentioned earlier, we need to extract the noise <span class="cmmi-10">v </span>from our noisy signal <span class="cmmi-10">y </span>(the video). Each frame of the video is a noisy realization of the signal <span class="cmmi-10">y </span>and we refer to the i-th frame of the video as <span class="cmmi-10">u</span><sub><span class="cmmi-7">i</span></sub>. Further we assume that the video has <span class="cmmi-10">N </span>frames. Our approach of extracting the noise from the observations <span class="cmmi-10">u</span><sub><span class="cmmi-7">i</span></sub> is to ﬁrst obtain an <span class="ptmri7t-">estimation </span>of the background signal <img src="document1x.png" alt="ˆx" class="circ" />, then we subtract each observation <span class="cmmi-10">u</span><sub><span class="cmmi-7">i</span></sub> from the estimated signal <img src="document2x.png" alt="ˆx" class="circ" /> to obtain an estimation of the noise at each frame:
+Where <span class="cmmi-10">y </span>is our noisy measurement of <span class="cmmi-10">x </span>(background signal), and <span class="cmmi-10">v </span>denotes the disturbance which in fact is our moving object disturbing that background signal <span class="cmmi-10">x</span>. As it was mentioned earlier, we need to extract the noise <span class="cmmi-10">v </span>from our noisy signal <span class="cmmi-10">y </span>(the video). Each frame of the video is a noisy realization of the signal <span class="cmmi-10">y </span>and we refer to the i-th frame of the video as <span class="cmmi-10">u</span><sub><span class="cmmi-7">i</span></sub>. Further we assume that the video has <span class="cmmi-10">N </span>frames. Our approach of extracting the noise from the observations <span class="cmmi-10">u</span><sub><span class="cmmi-7">i</span></sub> is to ﬁrst obtain an <span class="ptmri7t-">estimation </span>of the background signal <img src="./images/document1x.png" alt="ˆx" class="circ" />, then we subtract each observation <span class="cmmi-10">u</span><sub><span class="cmmi-7">i</span></sub> from the estimated signal <img src="./images/document2x.png" alt="ˆx" class="circ" /> to obtain an estimation of the noise at each frame:
 
 <table>
 <colgroup>
@@ -38,7 +38,7 @@ Where <span class="cmmi-10">y </span>is our noisy measurement of <span class="cm
 <tbody>
 <tr class="odd">
 <td><a href="" id="x1-6r2"></a>
-<img src="document3x.png" alt="ˆvi = ui − xˆ " class="math-display" /></td>
+<img src="./images/document3x.png" alt="ˆvi = ui − xˆ " class="math-display" /></td>
 <td>(2)</td>
 </tr>
 </tbody>
@@ -54,7 +54,7 @@ Given two deterministic random variables <span class="cmsy-10">{</span><span cla
 <tbody>
 <tr class="odd">
 <td><a href="" id="x1-7r3"></a>
-<img src="document4x.png" alt="xˆ= E (x |y) = E[x|u0,u2,...,uN −1] " class="math-display" /></td>
+<img src="./images/document4x.png" alt="xˆ= E (x |y) = E[x|u0,u2,...,uN −1] " class="math-display" /></td>
 <td>(3)</td>
 </tr>
 </tbody>
@@ -70,7 +70,7 @@ For simplicity, we assume that we model <span class="cmmi-10">x </span>as an unk
 <tbody>
 <tr class="odd">
 <td><a href="" id="x1-8r4"></a>
-<img src="document5x.png" alt="y(i) = x + v(i), i = 0,1,...,N − 1 " class="math-display" /></td>
+<img src="./images/document5x.png" alt="y(i) = x + v(i), i = 0,1,...,N − 1 " class="math-display" /></td>
 <td>(4)</td>
 </tr>
 </tbody>
@@ -86,7 +86,7 @@ and we deﬁne the column vector <span class="dsrom-10">𝟙</span> <span class=
 <tbody>
 <tr class="odd">
 <td><a href="" id="x1-9r5"></a>
-<img src="document6x.png" alt="y = 𝟙x +v " class="math-display" /></td>
+<img src="./images/document6x.png" alt="y = 𝟙x +v " class="math-display" /></td>
 <td>(5)</td>
 </tr>
 </tbody>
@@ -102,7 +102,7 @@ if this is the case, according to Gauss-Markov theorem, the optimal linear estim
 <tbody>
 <tr class="odd">
 <td><a href="" id="x1-10r6"></a>
-<img src="document7x.png" alt=" 1 N∑−1 1 N∑−1 ˆxmvue = -- y(i) =-- ui N i=0 N i=0 " class="math-display" /></td>
+<img src="./images/document7x.png" alt=" 1 N∑−1 1 N∑−1 ˆxmvue = -- y(i) =-- ui N i=0 N i=0 " class="math-display" /></td>
 <td>(6)</td>
 </tr>
 </tbody>
@@ -110,7 +110,7 @@ if this is the case, according to Gauss-Markov theorem, the optimal linear estim
 
 Namely, (6) means that the optimal linear estimator of x given <span class="cmsy-10">{</span><span class="cmbx-10">y</span><span class="cmr-10">(</span><span class="cmmi-10">i</span><span class="cmr-10">)</span><span class="cmsy-10">}</span>, is simply the mean of the samples(measurements). So, in order to obtain an estimation of the background of the video, we take the average of all frames and store it as the background scene. Fig. 1 illustrates 4 frames of a sample video, these samples are in fact 4 noisy measurements of our signal, and that yellow ball which we are trying to track acts as the disturbance to the background of the video(the door and the wall). Fig. 2 provides the background scene that is the result of averaging over all of the frames. Please note that in this project we are assuming that the background does not change, so sample-mean estimator is a good estimation of the background. However, in the case of real-time tracking where the background is not changing, one can feed the average estimator as the frames arrives; evidently, in this case, estimation improves with time.
 
-Now that we obtained <img src="document8x.png" alt="ˆx" class="circ" />, we can extract the noise from the signal(video) by subtracting each frame from the background. Fig. 3 provides four realization of the noise(moving object) at diﬀerent frames. Due to the fact that in our problem we do not care about the energy of the noise - the gray level of an image(pixels) is proportional to the energy or the amount of information it contains (entropy of the image) - we can use <span class="ptmri7t-">one-bit Compressed Sensing </span>method to store the noise. That is, we use the following model to store the noise :
+Now that we obtained <img src="./images/document8x.png" alt="ˆx" class="circ" />, we can extract the noise from the signal(video) by subtracting each frame from the background. Fig. 3 provides four realization of the noise(moving object) at diﬀerent frames. Due to the fact that in our problem we do not care about the energy of the noise - the gray level of an image(pixels) is proportional to the energy or the amount of information it contains (entropy of the image) - we can use <span class="ptmri7t-">one-bit Compressed Sensing </span>method to store the noise. That is, we use the following model to store the noise :
 
 <table>
 <colgroup>
@@ -120,7 +120,7 @@ Now that we obtained <img src="document8x.png" alt="ˆx" class="circ" />, we can
 <tbody>
 <tr class="odd">
 <td><a href="" id="x1-11r7"></a>
-<img src="document9x.png" alt="zi = sgn(vi − τi), i = 0,1,...,N − 1 " class="math-display" /></td>
+<img src="./images/document9x.png" alt="zi = sgn(vi − τi), i = 0,1,...,N − 1 " class="math-display" /></td>
 <td>(7)</td>
 </tr>
 </tbody>
@@ -132,31 +132,31 @@ Now that we estimated the moving object, we can easily ﬁnd the center of the o
 
 ------------------------------------------------------------------------
 
-<img src="document10x.png" alt="PIC" class="graphics" /> <a href="" id="x1-12r1"></a> <span class="ptmr7t-x-x-80">Fig.</span><span class="ptmr7t-x-x-80"> 1.</span><span class="ptmr7t-x-x-80"> </span><span class="ptmr7t-x-x-80"> Four sample frames of the video. In other words, these are four noisy measurements of the background (which is a 2D signal).</span>
+<img src="./images/document10x.png" alt="PIC" class="graphics" /> <a href="" id="x1-12r1"></a> <span class="ptmr7t-x-x-80">Fig.</span><span class="ptmr7t-x-x-80"> 1.</span><span class="ptmr7t-x-x-80"> </span><span class="ptmr7t-x-x-80"> Four sample frames of the video. In other words, these are four noisy measurements of the background (which is a 2D signal).</span>
 
 ------------------------------------------------------------------------
 
 ------------------------------------------------------------------------
 
-<img src="document11x.png" alt="PIC" class="graphics" /> <a href="" id="x1-13r2"></a> <span class="ptmr7t-x-x-80">Fig.</span><span class="ptmr7t-x-x-80"> 2.</span><span class="ptmr7t-x-x-80"> </span><span class="ptmr7t-x-x-80"> An estimation of the background signal resulted from averaging over all frames.</span>
+<img src="./images/document11x.png" alt="PIC" class="graphics" /> <a href="" id="x1-13r2"></a> <span class="ptmr7t-x-x-80">Fig.</span><span class="ptmr7t-x-x-80"> 2.</span><span class="ptmr7t-x-x-80"> </span><span class="ptmr7t-x-x-80"> An estimation of the background signal resulted from averaging over all frames.</span>
 
 ------------------------------------------------------------------------
 
 ------------------------------------------------------------------------
 
-<img src="document12x.png" alt="PIC" class="graphics" /> <a href="" id="x1-14r3"></a> <span class="ptmr7t-x-x-80">Fig.</span><span class="ptmr7t-x-x-80"> 3.</span><span class="ptmr7t-x-x-80"> </span><span class="ptmr7t-x-x-80"> Four realizations of the noise (moving object) at diﬀerent frames.</span>
+<img src="./images/document12x.png" alt="PIC" class="graphics" /> <a href="" id="x1-14r3"></a> <span class="ptmr7t-x-x-80">Fig.</span><span class="ptmr7t-x-x-80"> 3.</span><span class="ptmr7t-x-x-80"> </span><span class="ptmr7t-x-x-80"> Four realizations of the noise (moving object) at diﬀerent frames.</span>
 
 ------------------------------------------------------------------------
 
 ------------------------------------------------------------------------
 
-<img src="document13x.png" alt="PIC" class="graphics" /> <a href="" id="x1-15r4"></a> <span class="ptmr7t-x-x-80">Fig.</span><span class="ptmr7t-x-x-80"> 4.</span><span class="ptmr7t-x-x-80"> </span><span class="ptmr7t-x-x-80"> One realization of the noise after quantization.</span>
+<img src="./images/document13x.png" alt="PIC" class="graphics" /> <a href="" id="x1-15r4"></a> <span class="ptmr7t-x-x-80">Fig.</span><span class="ptmr7t-x-x-80"> 4.</span><span class="ptmr7t-x-x-80"> </span><span class="ptmr7t-x-x-80"> One realization of the noise after quantization.</span>
 
 ------------------------------------------------------------------------
 
 ------------------------------------------------------------------------
 
-<img src="document14x.png" alt="PIC" class="graphics" /> <a href="" id="x1-16r5"></a> <span class="ptmr7t-x-x-80">Fig.</span><span class="ptmr7t-x-x-80"> 5.</span><span class="ptmr7t-x-x-80"> </span><span class="ptmr7t-x-x-80"> Four sample frames of the video. In other words, these are four noisy measurements of the background (which is a 2D signal).</span>
+<img src="./images/document14x.png" alt="PIC" class="graphics" /> <a href="" id="x1-16r5"></a> <span class="ptmr7t-x-x-80">Fig.</span><span class="ptmr7t-x-x-80"> 5.</span><span class="ptmr7t-x-x-80"> </span><span class="ptmr7t-x-x-80"> Four sample frames of the video. In other words, these are four noisy measurements of the background (which is a 2D signal).</span>
 
 ------------------------------------------------------------------------
 
@@ -176,7 +176,7 @@ First we need to deﬁne our state for the Kalman ﬁlter. We want to predict th
 <tbody>
 <tr class="odd">
 <td><a href="" id="x1-18r8"></a>
-<img src="document15x.png" alt="xt = 1aT 2 + vt−1T + xt−1 2 " class="math-display" /></td>
+<img src="./images/document15x.png" alt="xt = 1aT 2 + vt−1T + xt−1 2 " class="math-display" /></td>
 <td>(8)</td>
 </tr>
 </tbody>
@@ -190,7 +190,7 @@ First we need to deﬁne our state for the Kalman ﬁlter. We want to predict th
 <tbody>
 <tr class="odd">
 <td><a href="" id="x1-19r9"></a>
-<img src="document16x.png" alt="vt = aT + vt−1 " class="math-display" /></td>
+<img src="./images/document16x.png" alt="vt = aT + vt−1 " class="math-display" /></td>
 <td>(9)</td>
 </tr>
 </tbody>
@@ -207,7 +207,7 @@ We deﬁne the state <span class="cmmi-10">X</span><sub><span class="cmmi-7">t</
 <tbody>
 <tr class="odd">
 <td><a href="" id="x1-20r10"></a>
-<img src="document17x.png" alt=" ⌊ ⌋ xt ||yt|| Xt = ⌈x˙t⌉ y˙t " class="math-display" /></td>
+<img src="./images/document17x.png" alt=" ⌊ ⌋ xt ||yt|| Xt = ⌈x˙t⌉ y˙t " class="math-display" /></td>
 <td>(10)</td>
 </tr>
 </tbody>
@@ -215,9 +215,9 @@ We deﬁne the state <span class="cmmi-10">X</span><sub><span class="cmmi-7">t</
 
 Next, we need to see what is the expected behaviour of our variables when we are going from one state to another. Based on Eq. (8) and (9), we deﬁne the following behaviour for the system variables:
 
-<span class="cmmi-10">x</span><sub><span class="cmmi-7">t</span></sub> <span class="cmr-10">= </span><span class="cmmi-10">x</span><sub><span class="cmmi-7">t</span><span class="cmsy-7">−</span><span class="cmr-7">1</span></sub> <span class="cmr-10">+</span> <span class="cmmi-10">ẋ</span><sub><span class="cmmi-7">t</span><span class="cmsy-7">−</span><span class="cmr-7">1</span></sub><span class="cmmi-10">T </span><span class="cmr-10">+</span> <img src="document18x.png" alt="1 2" class="frac" /><span class="cmmi-10">aT</span><sup><span class="cmr-7">2</span></sup>
+<span class="cmmi-10">x</span><sub><span class="cmmi-7">t</span></sub> <span class="cmr-10">= </span><span class="cmmi-10">x</span><sub><span class="cmmi-7">t</span><span class="cmsy-7">−</span><span class="cmr-7">1</span></sub> <span class="cmr-10">+</span> <span class="cmmi-10">ẋ</span><sub><span class="cmmi-7">t</span><span class="cmsy-7">−</span><span class="cmr-7">1</span></sub><span class="cmmi-10">T </span><span class="cmr-10">+</span> <img src="./images/document18x.png" alt="1 2" class="frac" /><span class="cmmi-10">aT</span><sup><span class="cmr-7">2</span></sup>
 
-<span class="cmmi-10">y</span><sub><span class="cmmi-7">t</span></sub> <span class="cmr-10">= </span><span class="cmmi-10">y</span><sub><span class="cmmi-7">t</span><span class="cmsy-7">−</span><span class="cmr-7">1</span></sub> <span class="cmr-10">+</span> <span class="cmmi-10">ẏ</span><sub><span class="cmmi-7">t</span><span class="cmsy-7">−</span><span class="cmr-7">1</span></sub><span class="cmmi-10">T </span><span class="cmr-10">+</span> <img src="document19x.png" alt="1 2" class="frac" /><span class="cmmi-10">aT</span><sup><span class="cmr-7">2</span></sup>
+<span class="cmmi-10">y</span><sub><span class="cmmi-7">t</span></sub> <span class="cmr-10">= </span><span class="cmmi-10">y</span><sub><span class="cmmi-7">t</span><span class="cmsy-7">−</span><span class="cmr-7">1</span></sub> <span class="cmr-10">+</span> <span class="cmmi-10">ẏ</span><sub><span class="cmmi-7">t</span><span class="cmsy-7">−</span><span class="cmr-7">1</span></sub><span class="cmmi-10">T </span><span class="cmr-10">+</span> <img src="./images/document19x.png" alt="1 2" class="frac" /><span class="cmmi-10">aT</span><sup><span class="cmr-7">2</span></sup>
 
 <span class="cmmi-10">ẋ</span><sub><span class="cmmi-7">t</span></sub> <span class="cmr-10">=</span> <span class="cmmi-10">ẋ</span><sub><span class="cmmi-7">t</span><span class="cmsy-7">−</span><span class="cmr-7">1</span></sub><span class="cmmi-10">T </span><span class="cmr-10">+ </span><span class="cmmi-10">aT</span>
 
@@ -233,7 +233,7 @@ So, the following model can be used to deﬁne the state transition:
 <tbody>
 <tr class="odd">
 <td><a href="" id="x1-21r11"></a>
-<img src="document20x.png" alt="⌊xt⌋ ⌊1 0 T 0⌋ ⌊xt−1⌋ ⌊1T2⌋ |yt| |0 1 0 T| |yt−1| |21T2| |⌈x˙t|⌉ = |⌈0 0 1 0|⌉ |⌈x˙t−1|⌉ + |⌈2T |⌉ .a + Wt −1 y˙t 0 0 0 1 y˙t−1 T " class="math-display" /></td>
+<img src="./images/document20x.png" alt="⌊xt⌋ ⌊1 0 T 0⌋ ⌊xt−1⌋ ⌊1T2⌋ |yt| |0 1 0 T| |yt−1| |21T2| |⌈x˙t|⌉ = |⌈0 0 1 0|⌉ |⌈x˙t−1|⌉ + |⌈2T |⌉ .a + Wt −1 y˙t 0 0 0 1 y˙t−1 T " class="math-display" /></td>
 <td>(11)</td>
 </tr>
 </tbody>
@@ -249,7 +249,7 @@ We can formulate (11) as follows:
 <tbody>
 <tr class="odd">
 <td><a href="" id="x1-22r12"></a>
-<img src="document21x.png" alt="Xt = AXt−1 + But−1 " class="math-display" /></td>
+<img src="./images/document21x.png" alt="Xt = AXt−1 + But−1 " class="math-display" /></td>
 <td>(12)</td>
 </tr>
 </tbody>
@@ -266,7 +266,7 @@ In this project, we are observing the position of the moving object. Therefore, 
 <tbody>
 <tr class="odd">
 <td><a href="" id="x1-23r13"></a>
-<img src="document22x.png" alt=" [1 0 0 0] H = 0 1 0 0 " class="math-display" /></td>
+<img src="./images/document22x.png" alt=" [1 0 0 0] H = 0 1 0 0 " class="math-display" /></td>
 <td>(13)</td>
 </tr>
 </tbody>
@@ -282,7 +282,7 @@ The measurement matrix is:
 <tbody>
 <tr class="odd">
 <td><a href="" id="x1-24r14"></a>
-<img src="document23x.png" alt=" ⌊ xt⌋ [xt] [1 0 0 0]| yt| yt = 0 1 0 0 |⌈ ˙xt|⌉ + Vt ˙yt " class="math-display" /></td>
+<img src="./images/document23x.png" alt=" ⌊ xt⌋ [xt] [1 0 0 0]| yt| yt = 0 1 0 0 |⌈ ˙xt|⌉ + Vt ˙yt " class="math-display" /></td>
 <td>(14)</td>
 </tr>
 </tbody>
@@ -304,7 +304,7 @@ Assuming that the state variables are independent, we initialize the covariance 
 <tbody>
 <tr class="odd">
 <td><a href="" id="x1-25r15"></a>
-<img src="document24x.png" alt=" ⌊σ2 0 0 0 ⌋ | x0 σ2 0 0 | St = |⌈ 0 y0 σ2 0 |⌉ 0 0 ˙x0 σ2 ˙y " class="math-display" /></td>
+<img src="./images/document24x.png" alt=" ⌊σ2 0 0 0 ⌋ | x0 σ2 0 0 | St = |⌈ 0 y0 σ2 0 |⌉ 0 0 ˙x0 σ2 ˙y " class="math-display" /></td>
 <td>(15)</td>
 </tr>
 </tbody>
@@ -320,7 +320,7 @@ Also, we further assume that the measurement noises are independent, then the co
 <tbody>
 <tr class="odd">
 <td><a href="" id="x1-26r16"></a>
-<img src="document25x.png" alt=" [σ2 0] cov(V ) = R = 10 σ2 2 " class="math-display" /></td>
+<img src="./images/document25x.png" alt=" [σ2 0] cov(V ) = R = 10 σ2 2 " class="math-display" /></td>
 <td>(16)</td>
 </tr>
 </tbody>
@@ -336,7 +336,7 @@ Finally we need to deﬁne the covariance matrix of dynamic noise. As it was des
 <tbody>
 <tr class="odd">
 <td><a href="" id="x1-27r17"></a>
-<img src="document26x.png" alt=" ⌊ σ2 0 σ 0⌋ | 0x σ2 x0˙x σ | Q = |⌈σ 0y σ2 y0˙y|⌉ x0x˙ σ x0˙ σ2 y˙y ˙y " class="math-display" /></td>
+<img src="./images/document26x.png" alt=" ⌊ σ2 0 σ 0⌋ | 0x σ2 x0˙x σ | Q = |⌈σ 0y σ2 y0˙y|⌉ x0x˙ σ x0˙ σ2 y˙y ˙y " class="math-display" /></td>
 <td>(17)</td>
 </tr>
 </tbody>
@@ -352,7 +352,7 @@ From (11), we can deﬁne <span class="cmmi-10">Q </span>as:
 <tbody>
 <tr class="odd">
 <td><a href="" id="x1-28r18"></a>
-<img src="document27x.png" alt=" ⌊1 4 1 3 ⌋ |4T 104 2T 10 3| Q = |⌈10 3 4T 02 2T |⌉ 2T 103 T 02 0 2T 0 T " class="math-display" /></td>
+<img src="./images/document27x.png" alt=" ⌊1 4 1 3 ⌋ |4T 104 2T 10 3| Q = |⌈10 3 4T 02 2T |⌉ 2T 103 T 02 0 2T 0 T " class="math-display" /></td>
 <td>(18)</td>
 </tr>
 </tbody>
@@ -368,7 +368,7 @@ We assume that our original tracker (section II.a) is used as the input to the K
 <tbody>
 <tr class="odd">
 <td><a href="" id="x1-29r19"></a>
-<img src="document28x.png" alt=" [ˆxt] Yt = ˆyt " class="math-display" /></td>
+<img src="./images/document28x.png" alt=" [ˆxt] Yt = ˆyt " class="math-display" /></td>
 <td>(19)</td>
 </tr>
 </tbody>
@@ -398,7 +398,7 @@ The ﬁrst scenario is the case that we are sensing the position of the object e
 
 ------------------------------------------------------------------------
 
-<img src="document29x.png" alt="PIC" class="graphics" /> <a href="" id="x1-32r6"></a> <span class="ptmr7t-x-x-80">Fig.</span><span class="ptmr7t-x-x-80"> 6.</span><span class="ptmr7t-x-x-80"> </span><span class="ptmr7t-x-x-80"> Scenario 1 in which the Kalman ﬁlter tracks the moving object when it is feeded every three samples.</span>
+<img src="./images/document29x.png" alt="PIC" class="graphics" /> <a href="" id="x1-32r6"></a> <span class="ptmr7t-x-x-80">Fig.</span><span class="ptmr7t-x-x-80"> 6.</span><span class="ptmr7t-x-x-80"> </span><span class="ptmr7t-x-x-80"> Scenario 1 in which the Kalman ﬁlter tracks the moving object when it is feeded every three samples.</span>
 
 ------------------------------------------------------------------------
 
@@ -410,7 +410,7 @@ In this scenario, we add a large noise to the input of the Kalman ﬁlter. It tu
 
 ------------------------------------------------------------------------
 
-<img src="document30x.png" alt="PIC" class="graphics" /> <a href="" id="x1-34r7"></a> <span class="ptmr7t-x-x-80">Fig.</span><span class="ptmr7t-x-x-80"> 7.</span><span class="ptmr7t-x-x-80"> </span><span class="ptmr7t-x-x-80"> Scenario 2 in which the Kalman ﬁlter tracks the moving object in the presence of a large noise.</span>
+<img src="./images/document30x.png" alt="PIC" class="graphics" /> <a href="" id="x1-34r7"></a> <span class="ptmr7t-x-x-80">Fig.</span><span class="ptmr7t-x-x-80"> 7.</span><span class="ptmr7t-x-x-80"> </span><span class="ptmr7t-x-x-80"> Scenario 2 in which the Kalman ﬁlter tracks the moving object in the presence of a large noise.</span>
 
 ------------------------------------------------------------------------
 
@@ -428,7 +428,7 @@ In this case, we let the Kalman ﬁlter to learn for half of the frames and then
 <tbody>
 <tr class="odd">
 <td><a href="" id="x1-36r20"></a>
-<img src="document31x.png" alt=" ⌊x ⌋ | y| ||x˙|| X = || ˙y|| |⌈x¨|⌉ ¨y " class="math-display" /></td>
+<img src="./images/document31x.png" alt=" ⌊x ⌋ | y| ||x˙|| X = || ˙y|| |⌈x¨|⌉ ¨y " class="math-display" /></td>
 <td>(20)</td>
 </tr>
 </tbody>
@@ -438,7 +438,7 @@ Fig. 8 provides the result of this scenario. As you can see, Kalman ﬁlter is n
 
 ------------------------------------------------------------------------
 
-<img src="document32x.png" alt="PIC" class="graphics" /> <a href="" id="x1-37r8"></a> <span class="ptmr7t-x-x-80">Fig.</span><span class="ptmr7t-x-x-80"> 8.</span><span class="ptmr7t-x-x-80"> </span><span class="ptmr7t-x-x-80"> Scenario 3 in which the Kalman ﬁlter blindly track the moving object.</span>
+<img src="./images/document32x.png" alt="PIC" class="graphics" /> <a href="" id="x1-37r8"></a> <span class="ptmr7t-x-x-80">Fig.</span><span class="ptmr7t-x-x-80"> 8.</span><span class="ptmr7t-x-x-80"> </span><span class="ptmr7t-x-x-80"> Scenario 3 in which the Kalman ﬁlter blindly track the moving object.</span>
 
 ------------------------------------------------------------------------
 
