@@ -1,16 +1,16 @@
-<span class="ptmr7t-x-x-240">Object Tracking Using Kalman Filter</span>
+#Object Tracking Using Kalman Filter
 
-<span class="ptmr7t-x-x-110">Shahin Khobahi</span> <a href="" id="x1-2r1"></a>
+##Shahin Khobahi
 
-<span class="ptmrc7t-">I. I<span class="small-caps">n</span><span class="small-caps">t</span><span class="small-caps">r</span><span class="small-caps">o</span><span class="small-caps">d</span><span class="small-caps">u</span><span class="small-caps">c</span><span class="small-caps">t</span><span class="small-caps">i</span><span class="small-caps">o</span><span class="small-caps">n</span></span> <a href="" id="Q1-1-0"></a>
+###I. Introduction
 
 In this project, we are proposing an adaptive ﬁlter approach to track a moving object in a video. Currently, object tracking is an important issue in many applications such as video survelance, traﬃc management, video indexing, machine learning, artiﬁcial intelligence and many other related ﬁelds. As we will discuss in the following sections, moving object tracking can be interpreted as an estimation problem. Kalman ﬁlter is a powerful algorithm that can be used in the state estimation problems and that is the reason we used this method to estimate and predict the position of a moving object. In the ﬁrst stage of this project we use the background subtraction method to detect the moving object in the video and then we use the Kalman ﬁlter ro predict and estimate the next state of the object. <a href="" id="x1-3r2"></a>
 
-<span class="ptmrc7t-">II. P<span class="small-caps">r</span><span class="small-caps">o</span><span class="small-caps">b</span><span class="small-caps">l</span><span class="small-caps">e</span><span class="small-caps">m</span> F<span class="small-caps">o</span><span class="small-caps">r</span><span class="small-caps">m</span><span class="small-caps">u</span><span class="small-caps">l</span><span class="small-caps">a</span><span class="small-caps">t</span><span class="small-caps">i</span><span class="small-caps">o</span><span class="small-caps">n</span></span> <a href="" id="Q1-1-0"></a>
+###II. Problem Formulation
 
 <a href="" id="x1-4r1"></a>
 
-<span class="ptmri7t-">A. Object Detection Using Background Subtraction</span> <a href="" id="Q1-1-0"></a>
+####A. Object Detection Using Background Subtraction
 
 A video is composed of a series of frames each which can be considered as a 2D signal. So, a video can be seen as a two-dimensional (2D) signal through time. Moreover, there are two types of objects in a video: <span class="ptmri7t-">steady and moving objects</span>. Steady objects do not change from frame to frame and can be considered as the background scene. The goal is to detect a moving objects from the steady ones. First let us provide an example: consider that you are looking at a wall and suddenly a birdy ﬂy over this wall. The steady object in this scene is the wall and the moving object is the birds. The bird is in fact disturbing your observation of the wall(background), so in the context of signal processing, this bird(moving object) can be seen as a noise to that background. In other words, in a video, a moving object is like a noise to the background scene which is a ﬁxed signal, and this moving object is adding noise to our observation of that background. Consequently, each frame of the video can be interpreted as a noisy observation of the background. Therefore, the problem is just simply the noise detection in a signal. The following model can be used for our problem:
 
@@ -162,7 +162,7 @@ Now that we estimated the moving object, we can easily ﬁnd the center of the o
 
 <a href="" id="x1-17r2"></a>
 
-<span class="ptmri7t-">B. Kalman Filter</span> <a href="" id="Q1-1-5"></a>
+####B. Kalman Filter
 
 In this section we describe the formulation and system model for Kalman ﬁlter.
 Intutitively, Kalman ﬁlter takes the current state of your system, and makes a prediction based on the current state and current uncertainty of our measurements, and make a prediction for the next state of the system with anuncertainty. Then, it compares its prediction with the received input and correct it self upon the error.
@@ -388,11 +388,11 @@ We deﬁned all of the required matrices for Kalman ﬁlter. Now we can use the 
 
 <a href="" id="x1-30r3"></a>
 
-<span class="ptmrc7t-">III. R<span class="small-caps">e</span><span class="small-caps">s</span><span class="small-caps">u</span><span class="small-caps">l</span><span class="small-caps">t</span><span class="small-caps">s</span></span> <a href="" id="Q1-1-5"></a>
+###III. Results
 
 In order to observe the behaviour of Kalman ﬁlter under diﬀerent circumstances, we considered three diﬀerent cases to examine the Kalman ﬁlter in object tracking. In the following subsections, we examine each of these cases. <a href="" id="x1-31r1"></a>
 
-<span class="ptmri7t-">A. Scenario 1: Prediction</span> <a href="" id="Q1-1-5"></a>
+###A. Scenario 1: Prediction
 
 The ﬁrst scenario is the case that we are sensing the position of the object every 3 frames and we want to have a good prediction of the position of moving object based on these samples. Fig. 6, illustrates the result in four diﬀerent frames. The yellow circle is our main tracker(which is used as the input to the Kalman ﬁlter every 3 frames) and the black circle is the prediction of Kalman ﬁlter. It can be observed that the Kalman ﬁlter is tracking the moving object with a very good accuracy.
 
@@ -404,7 +404,7 @@ The ﬁrst scenario is the case that we are sensing the position of the object e
 
 <a href="" id="x1-33r2"></a>
 
-<span class="ptmri7t-">B. Scenario 2: Prediction In The Presence of Noise</span> <a href="" id="Q1-1-6"></a>
+###B. Scenario 2: Prediction In The Presence of Noise
 
 In this scenario, we add a large noise to the input of the Kalman ﬁlter. It turns out that the Kalman ﬁlter is more robust to the noise than the original tracker. So, if we have our measurements aren corrupted by noise, one can use the Kalman ﬁlter to obtain a better estimation than each of the sensors (<span class="ptmri7t-">data fusion</span>) because this algorithm is an adaptive ﬁlter and is more robust to the noise than each of the sensors. Fig. 7, illustrates this scenario. It can be seen that, the yellow circle is jumping around and is far from the object. However, the Kalman ﬁlter has a better estimation of the position. Please note that, a low gain will smooth out the noise but also lowers the speed of Kalman ﬁlter (it will detect the changes more slowly).
 
@@ -416,7 +416,7 @@ In this scenario, we add a large noise to the input of the Kalman ﬁlter. It tu
 
 <a href="" id="x1-35r3"></a>
 
-<span class="ptmri7t-">C. Scenario 3: Blind Prediction</span> <a href="" id="Q1-1-7"></a>
+###C. Scenario 3: Blind Prediction
 
 In this case, we let the Kalman ﬁlter to learn for half of the frames and then we did not update the input for the ﬁlter. In (10) we deﬁned the dynamic of the system for the constant velocity object. That is, we are not capturing the acceleration of the system. So, we should expect that the Kalman ﬁlter can not track the trajectory of the ball because the object is under the gravity and has a negative vertical acceleration. If we want to track the trajectory of the without the input, we must use a more complex system model as follows:
 
@@ -444,6 +444,6 @@ Fig. 8 provides the result of this scenario. As you can see, Kalman ﬁlter is n
 
 <a href="" id="x1-38r4"></a>
 
-<span class="ptmrc7t-">IV. C<span class="small-caps">o</span><span class="small-caps">n</span><span class="small-caps">c</span><span class="small-caps">l</span><span class="small-caps">u</span><span class="small-caps">s</span><span class="small-caps">i</span><span class="small-caps">o</span><span class="small-caps">n</span></span> <a href="" id="Q1-1-8"></a>
+###IV. Conclusion
 
 In this project we designed a Kalman ﬁlter to track a moving object in a video. In fact, as it was mentioned earlier, a moving object in a video can be seen as a noise to the background scene. So, this project was simply a noise detection based on Kalman ﬁlter. The same approach can be used to estimate and cancel out the noise of other signals. As we saw in the scenario 1 and 2, Kalman ﬁlter can be used whenever we need to predict the next state of a system based on some noisy measurements. Also, it can be used for sensor fusion as well. It must be mention that this algorithm is deﬁned for linear systems(we used linear algebra). In the case if nonlinear systems, the extended Kalman ﬁlter (EKF) which is a nonlinear version of Kalman ﬁlter can be used.
