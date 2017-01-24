@@ -416,7 +416,7 @@ In this scenario, we add a large noise to the input of the Kalman ﬁlter. It tu
 
 <a href="" id="x1-35r3"></a>
 
-###C. Scenario 3: Blind Prediction
+####C. Scenario 3: Blind Prediction
 
 In this case, we let the Kalman ﬁlter to learn for half of the frames and then we did not update the input for the ﬁlter. In (10) we deﬁned the dynamic of the system for the constant velocity object. That is, we are not capturing the acceleration of the system. So, we should expect that the Kalman ﬁlter can not track the trajectory of the ball because the object is under the gravity and has a negative vertical acceleration. If we want to track the trajectory of the without the input, we must use a more complex system model as follows:
 
